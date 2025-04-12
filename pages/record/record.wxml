@@ -1,0 +1,144 @@
+<view class="container">
+  <!-- 体重概览卡片 -->
+  <view class="weight-overview-card">
+    <view class="weight-stats">
+      <view class="weight-stat">
+        <text class="label">初始</text>
+        <text class="value">{{weightInfo.initial}}</text>
+      </view>
+      
+      <view class="weight-progress">
+        <view class="increased">
+          <text>已增重(公斤)</text>
+          <text class="value">{{weightInfo.increased}}</text>
+        </view>
+        <view class="progress-circle"></view>
+        <text class="check-plan">查看方案 ></text>
+      </view>
+      
+      <view class="weight-stat">
+        <text class="label">目标</text>
+        <text class="value">{{weightInfo.target}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 饮食运动记录 -->
+  <view class="food-exercise-card">
+    <view class="card-header">
+      <text class="title">饮食运动记录</text>
+      <text class="subtitle">今日未记录</text>
+      <text class="more">></text>
+    </view>
+    
+    <view class="calories-info">
+      <text class="calories-left">{{caloriesLeft}}</text>
+      <text class="calories-label">还可摄入(千卡)</text>
+      
+      <view class="calories-details">
+        <view class="food-calories">
+          <text class="value">{{foodCalories}}</text>
+          <text class="label">饮食</text>
+        </view>
+        <view class="exercise-calories">
+          <text class="value">{{exerciseCalories}}</text>
+          <text class="label">运动</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="meal-types">
+      <view class="meal-type" bindtap="navigateToMeal" data-type="breakfast">
+        <image src="/images/breakfast.png"></image>
+        <text>早餐</text>
+      </view>
+      <view class="meal-type" bindtap="navigateToMeal" data-type="lunch">
+        <image src="/images/lunch.png"></image>
+        <text>午餐</text>
+      </view>
+      <view class="meal-type" bindtap="navigateToMeal" data-type="dinner">
+        <image src="/images/dinner.png"></image>
+        <text>晚餐</text>
+      </view>
+      <view class="meal-type" bindtap="navigateToMeal" data-type="snack">
+        <image src="/images/snack.png"></image>
+        <text>加餐</text>
+      </view>
+      <view class="meal-type" bindtap="navigateToExercise">
+        <image src="/images/exercise.png"></image>
+        <text>运动</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 体重记录 -->
+  <view class="weight-record-card">
+    <view class="card-header">
+      <text class="title">体重记录</text>
+      <text class="date">{{weightInfo.date}}</text>
+      <view class="add-btn" bindtap="addWeightRecord">
+        <image src="/images/add.png"></image>
+      </view>
+      <text class="more">></text>
+    </view>
+    
+    <view class="weight-info">
+      <text class="current-weight">{{weightInfo.current}}</text>
+      <text class="unit">公斤</text>
+    </view>
+    
+    <view class="weight-chart"></view>
+  </view>
+  
+  <!-- 腰围记录 -->
+  <view class="waistline-card">
+    <view class="card-header">
+      <text class="title">腰围记录</text>
+      <text class="subtitle">暂无记录</text>
+      <view class="add-btn" bindtap="addWaistlineRecord">
+        <image src="/images/add.png"></image>
+      </view>
+      <text class="more">></text>
+    </view>
+    
+    <view class="waistline-info">
+      <text class="current-waistline">{{waistline}}</text>
+      <text class="unit">厘米</text>
+    </view>
+  </view>
+  
+  <!-- 健康习惯 -->
+  <view class="health-habits-card">
+    <view class="card-header">
+      <text class="title">健康习惯</text>
+      <text class="subtitle">今日 {{healthHabits.today}}</text>
+      <text class="more">></text>
+    </view>
+    
+    <view class="habits-info">
+      <text class="ratio">{{healthHabits.completed}}/{{healthHabits.total}}</text>
+      <view class="weekday-stats">
+        <view class="weekday" wx:for="{{7}}" wx:key="index">
+          <view class="progress-bar"></view>
+          <text class="day-label">{{index === 0 ? '一' : index === 1 ? '二' : index === 2 ? '三' : index === 3 ? '四' : index === 4 ? '五' : index === 5 ? '六' : '日'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 添加底部导航菜单 -->
+  <view class="custom-tabbar">
+    <view class="tab-item" bindtap="navigateToHome">
+      <image src="/images/tab-home.png" class="tab-icon"></image>
+      <text class="tab-text">首页</text>
+    </view>
+    <view class="tab-item" bindtap="navigateToAI">
+      <image src="/images/tab-ai.png" class="tab-icon"></image>
+      <text class="tab-text">AI</text>
+    </view>
+    <view class="tab-item" bindtap="navigateToProfile">
+      <image src="/images/tab-profile.png" class="tab-icon"></image>
+      <text class="tab-text">我的</text>
+    </view>
+  </view>
+</view> 

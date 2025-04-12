@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="banner">
+    <image class="banner-img" src="/images/banner.png" mode="aspectFill"></image>
+    <view class="banner-text">无糖可乐，健康生活</view>
+  </view>
+  
+  <view class="quick-stats">
+    <view class="stat-item">
+      <view class="value">每日坚持</view>
+      <view class="label">健康习惯</view>
+    </view>
+    <view class="stat-item">
+      <view class="value">平衡饮食</view>
+      <view class="label">科学增重</view>
+    </view>
+    <view class="stat-item">
+      <view class="value">合理运动</view>
+      <view class="label">身体塑形</view>
+    </view>
+  </view>
+  
+  <view class="function-grid">
+    <view class="function-item">
+      <image src="/images/icon-record.png"></image>
+      <text>体重记录</text>
+    </view>
+    <view class="function-item">
+      <image src="/images/icon-food.png"></image>
+      <text>饮食记录</text>
+    </view>
+    <view class="function-item">
+      <image src="/images/icon-exercise.png"></image>
+      <text>运动记录</text>
+    </view>
+    <view class="function-item">
+      <image src="/images/icon-analysis.png"></image>
+      <text>健康分析</text>
+    </view>
+  </view>
+  
+  <view class="health-tips">
+    <view class="tips-header">无糖可乐小贴士</view>
+    <view class="tips-content">
+      {{healthTips[currentTipIndex]}}
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,101 @@
+<view class="container">
+  <!-- 顶部操作栏 -->
+  <view class="action-bar">
+    <button class="edit-btn" bindtap="toggleEditMode">{{isEditing ? '保存' : '编辑'}}</button>
+  </view>
+
+  <view class="user-info-list">
+    <!-- 用户ID -->
+    <view class="info-item">
+      <text class="label">用户ID</text>
+      <text class="value">{{userInfo.userId}}</text>
+    </view>
+    
+    <!-- 性别 -->
+    <view class="info-item" bindtap="{{isEditing ? 'editGender' : ''}}">
+      <text class="label">性别</text>
+      <view class="value-container">
+        <text class="value">{{userInfo.gender}}</text>
+        <text wx:if="{{isEditing}}" class="edit-icon">></text>
+      </view>
+    </view>
+    
+    <!-- 生日 -->
+    <view class="info-item" bindtap="{{isEditing ? 'editBirthday' : ''}}">
+      <text class="label">生日</text>
+      <view class="value-container">
+        <text class="value">{{userInfo.birthday}}</text>
+        <text wx:if="{{isEditing}}" class="edit-icon">></text>
+      </view>
+    </view>
+    
+    <!-- 身高 -->
+    <view class="info-item" bindtap="{{isEditing ? 'editHeight' : ''}}">
+      <text class="label">身高</text>
+      <view class="value-container">
+        <text class="value">{{userInfo.height}} 厘米</text>
+        <text wx:if="{{isEditing}}" class="edit-icon">></text>
+      </view>
+    </view>
+    
+    <!-- 当前体重 -->
+    <view class="info-item" bindtap="{{isEditing ? 'editCurrentWeight' : ''}}">
+      <text class="label">当前体重</text>
+      <view class="value-container">
+        <text class="value">{{userInfo.currentWeight}} 公斤</text>
+        <text wx:if="{{isEditing}}" class="edit-icon">></text>
+      </view>
+    </view>
+    
+    <!-- 目标体重 -->
+    <view class="info-item" bindtap="{{isEditing ? 'editTargetWeight' : ''}}">
+      <text class="label">目标体重</text>
+      <view class="value-container">
+        <text class="value">{{userInfo.targetWeight}} 公斤</text>
+        <text wx:if="{{isEditing}}" class="edit-icon">></text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 编辑对话框 -->
+  <view class="input-dialog" wx:if="{{showDialog}}">
+    <view class="dialog-content">
+      <view class="dialog-header">{{dialogTitle}}</view>
+      <view class="dialog-body">
+        <input wx:if="{{dialogType == 'text'}}" 
+          class="dialog-input" 
+          type="text" 
+          value="{{dialogValue}}" 
+          bindinput="updateDialogValue" 
+          focus="true" />
+        
+        <input wx:if="{{dialogType == 'number'}}"
+          class="dialog-input" 
+          type="number" 
+          value="{{dialogValue}}" 
+          bindinput="updateDialogValue" 
+          focus="true" />
+        
+        <input wx:if="{{dialogType == 'digit'}}"
+          class="dialog-input" 
+          type="digit" 
+          value="{{dialogValue}}" 
+          bindinput="updateDialogValue" 
+          focus="true" />
+        
+        <picker wx:if="{{dialogType == 'date'}}"
+          mode="date" 
+          value="{{dialogValue}}" 
+          start="1900-01-01" 
+          end="2100-12-31"
+          bindchange="updateDialogValue">
+          <view class="picker-view">{{dialogValue}}</view>
+        </picker>
+      </view>
+      <view class="dialog-footer">
+        <view class="dialog-btn cancel-btn" bindtap="closeDialog">取消</view>
+        <view class="dialog-btn confirm-btn" bindtap="confirmDialog">确定</view>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,37 @@
+/* 添加自定义底部导航栏样式 */
+.custom-tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1rpx solid #eeeeee;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-icon {
+  width: 54rpx;
+  height: 54rpx;
+  margin-bottom: 6rpx;
+}
+
+.tab-text {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 确保页面内容不被底部导航栏遮挡 */
+.container {
+  padding-bottom: calc(110rpx + env(safe-area-inset-bottom));
+} 

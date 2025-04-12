@@ -1,0 +1,80 @@
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-info-card">
+    <view class="user-basic" bindtap="navigateToUserInfo">
+      <image class="avatar" src="{{userInfo.avatar}}"></image>
+      <text class="nickname">{{userInfo.nickname}}</text>
+      <text class="arrow">></text>
+    </view>
+    
+    <view class="weight-stats">
+      <view class="stat">
+        <text class="value">{{weightInfo.current}}</text>
+        <text class="label">当前(公斤)</text>
+      </view>
+      <view class="stat">
+        <text class="value">{{weightInfo.target}}</text>
+        <text class="label">目标(公斤)</text>
+      </view>
+      <view class="stat">
+        <text class="value">{{weightInfo.bmi}}</text>
+        <text class="label">BMI</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 功能区块 -->
+  <view class="feature-grid">
+    <view class="feature-item" bindtap="navigateToBasicInfo">
+      <view class="feature-icon basic-info"></view>
+      <text>基本信息</text>
+    </view>
+    <view class="feature-item" bindtap="navigateToFavoriteFood">
+      <view class="feature-icon favorite-food"></view>
+      <text>收藏的食物</text>
+    </view>
+    <view class="feature-item" bindtap="navigateToUploadedFood">
+      <view class="feature-icon uploaded-food"></view>
+      <text>上传的食物</text>
+    </view>
+    <view class="feature-item" bindtap="navigateToStory">
+      <view class="feature-icon weight-story"></view>
+      <text>无糖故事</text>
+    </view>
+  </view>
+  
+  <!-- 健康测评 -->
+  <view class="menu-item" bindtap="navigateToHealthAssessment">
+    <view class="menu-icon health-assessment"></view>
+    <text class="title">健康测评</text>
+    <text class="arrow">></text>
+  </view>
+  
+  <!-- 健康方案 -->
+  <view class="menu-item" bindtap="navigateToHealthPlan">
+    <view class="menu-icon health-plan"></view>
+    <text class="title">健康方案</text>
+    <text class="arrow">></text>
+  </view>
+  
+  <!-- 商务合作 -->
+  <view class="menu-item" bindtap="navigateToBusiness">
+    <view class="menu-icon business"></view>
+    <text class="title">商务合作</text>
+    <text class="arrow">></text>
+  </view>
+  
+  <!-- 建议反馈 -->
+  <view class="menu-item" bindtap="navigateToFeedback">
+    <view class="menu-icon feedback"></view>
+    <text class="title">建议反馈</text>
+    <text class="arrow">></text>
+  </view>
+  
+  <!-- 设置 -->
+  <view class="menu-item" bindtap="navigateToSettings">
+    <view class="menu-icon settings"></view>
+    <text class="title">设置</text>
+    <text class="arrow">></text>
+  </view>
+</view> 

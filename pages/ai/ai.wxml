@@ -1,0 +1,122 @@
+<view class="container">
+  <view class="camera-container" wx:if="{{!photoTaken}}">
+    <camera device-position="{{devicePosition}}" flash="off" binderror="error" style="width: 100%; height: 85vh;"></camera>
+    
+    <view class="camera-controls">
+      <view class="left-controls">
+        <view class="control-btn switch-btn" bindtap="switchCamera">
+          <image src="/images/switch-camera.png"></image>
+        </view>
+      </view>
+      
+      <view class="center-controls">
+        <view class="control-btn capture-btn" bindtap="takePhoto">
+          <view class="circle"></view>
+        </view>
+      </view>
+      
+      <view class="right-controls">
+        <view class="control-action-btn" bindtap="chooseFromAlbum">
+          <text class="action-text">相册</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="result-container" wx:if="{{photoTaken}}">
+    <image class="photo-preview" src="{{src}}" mode="aspectFit"></image>
+    
+    <view class="loading-container" wx:if="{{analyzing}}">
+      <view class="loading-text">AI正在分析...</view>
+      <view class="loading-spinner"></view>
+    </view>
+    
+    <view class="analysis-result" wx:if="{{!analyzing && analysisResult}}">
+      <view class="result-title">AI分析结果</view>
+      
+      <!-- 食物分析结果 -->
+      <view class="result-details" wx:if="{{resultType === 'food'}}">
+        <view class="result-item">
+          <text class="label">食物名称:</text>
+          <text class="value">{{analysisResult.name}}</text>
+        </view>
+        <view class="result-item">
+          <text class="label">热量:</text>
+          <text class="value">{{analysisResult.calories}} 千卡</text>
+        </view>
+        <view class="result-item">
+          <text class="label">蛋白质:</text>
+          <text class="value">{{analysisResult.protein}}g</text>
+        </view>
+        <view class="result-item">
+          <text class="label">碳水化合物:</text>
+          <text class="value">{{analysisResult.carbs}}g</text>
+        </view>
+        <view class="result-item">
+          <text class="label">脂肪:</text>
+          <text class="value">{{analysisResult.fat}}g</text>
+        </view>
+        <view class="result-item">
+          <text class="label">识别可信度:</text>
+          <text class="value">{{analysisResult.confidence * 100}}%</text>
+        </view>
+      </view>
+      
+      <!-- 运动分析结果 -->
+      <view class="result-details" wx:if="{{resultType === 'exercise'}}">
+        <view class="result-item">
+          <text class="label">运动类型:</text>
+          <text class="value">{{analysisResult.name}}</text>
+        </view>
+        <view class="result-item">
+          <text class="label">燃烧热量:</text>
+          <text class="value">{{analysisResult.caloriesBurned}} 千卡</text>
+        </view>
+        <view class="result-item">
+          <text class="label">持续时间:</text>
+          <text class="value">{{analysisResult.duration}} 分钟</text>
+        </view>
+        <view class="result-item">
+          <text class="label">强度:</text>
+          <text class="value">{{analysisResult.intensity}}</text>
+        </view>
+        <view class="result-item">
+          <text class="label">识别可信度:</text>
+          <text class="value">{{analysisResult.confidence * 100}}%</text>
+        </view>
+      </view>
+      
+      <!-- 身体分析结果 -->
+      <view class="result-details" wx:if="{{resultType === 'body'}}">
+        <view class="result-item">
+          <text class="label">体脂率:</text>
+          <text class="value">{{analysisResult.bodyFat}}%</text>
+        </view>
+        <view class="result-item">
+          <text class="label">肌肉含量:</text>
+          <text class="value">{{analysisResult.muscle}}%</text>
+        </view>
+        <view class="result-item">
+          <text class="label">体重估计:</text>
+          <text class="value">{{analysisResult.weight}} kg</text>
+        </view>
+        <view class="result-item">
+          <text class="label">识别可信度:</text>
+          <text class="value">{{analysisResult.confidence * 100}}%</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="result-controls">
+      <button class="control-button retake" bindtap="retakePhoto">重新拍照</button>
+      <button class="control-button save" bindtap="saveToAlbum">保存到相册</button>
+    </view>
+  </view>
+  
+  <view class="ai-intro" wx:if="{{!photoTaken}}">
+    <view class="intro-title">AI拍照识别</view>
+    <view class="intro-desc">
+      拍摄食物、运动或身体照片，AI将自动识别并给出分析结果。
+    </view>
+  </view>
+</view> 

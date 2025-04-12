@@ -1,0 +1,6 @@
+<view class="placeholder-container">
+  <view class="placeholder-header"></view>
+  <view class="placeholder-content">
+    <view class="placeholder-item" wx:for="{{6}}" wx:key="index"></view>
+  </view>
+</view> 

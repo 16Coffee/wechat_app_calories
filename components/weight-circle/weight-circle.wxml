@@ -1,0 +1,28 @@
+<view class="circle-container" style="width:{{size}}rpx;height:{{size}}rpx;">
+  <svg class="circle-progress" width="{{size}}" height="{{size}}">
+    <circle 
+      cx="{{center}}" 
+      cy="{{center}}" 
+      r="{{radius}}" 
+      stroke-width="{{strokeWidth}}" 
+      stroke="{{backgroundColor}}" 
+      fill="none" 
+    />
+    <circle 
+      cx="{{center}}" 
+      cy="{{center}}" 
+      r="{{radius}}" 
+      stroke-width="{{strokeWidth}}" 
+      stroke="{{activeColor}}" 
+      fill="none" 
+      stroke-dasharray="{{perimeter}}"
+      stroke-dashoffset="{{right}}"
+      stroke-linecap="round"
+      transform="rotate(-90, {{center}}, {{center}})"
+    />
+  </svg>
+  <view class="circle-content">
+    <text class="circle-value" style="font-size:{{valueSize}}rpx;">{{value}}</text>
+    <text wx:if="{{label}}" class="circle-label" style="font-size:{{labelSize}}rpx;">{{label}}</text>
+  </view>
+</view> 

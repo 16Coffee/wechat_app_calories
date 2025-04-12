@@ -1,0 +1,116 @@
+.container {
+  padding: 30rpx;
+  background-color: #f6f6f6;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  background-color: #14D173;
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 40rpx;
+  left: 40rpx;
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+
+.quick-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.stat-item {
+  width: 30%;
+  height: 150rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.stat-item .value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 8rpx;
+}
+
+.stat-item .label {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.function-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30rpx;
+}
+
+.function-item {
+  width: 48%;
+  height: 180rpx;
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.function-item:nth-child(odd) {
+  margin-right: 4%;
+}
+
+.function-item image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 16rpx;
+}
+
+.function-item text {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.health-tips {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.tips-header {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20rpx;
+  border-left: 8rpx solid #14D173;
+  padding-left: 20rpx;
+}
+
+.tips-content {
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.6;
+} 

@@ -1,0 +1,165 @@
+.container {
+  padding: 0;
+  background-color: #f6f6f6;
+}
+
+/* 用户信息卡片 */
+.user-info-card {
+  background-color: #ffffff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-basic {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  margin-right: 20rpx;
+}
+
+.nickname {
+  flex: 1;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #333333;
+}
+
+.arrow {
+  color: #cccccc;
+  font-size: 32rpx;
+}
+
+.weight-stats {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30rpx;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat .value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.stat .label {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 功能区块 */
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.feature-item {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.feature-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #14D173;
+  font-size: 40rpx;
+}
+
+.basic-info:before {
+  content: "👤";
+}
+
+.favorite-food:before {
+  content: "⭐";
+}
+
+.uploaded-food:before {
+  content: "🍽️";
+}
+
+.weight-story:before {
+  content: "📖";
+}
+
+.feature-item text {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+/* 菜单项 */
+.menu-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30rpx;
+  margin-bottom: 2rpx;
+}
+
+.menu-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  background-color: transparent;
+  color: #14D173;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+}
+
+.health-assessment:before {
+  content: "📋";
+}
+
+.health-plan:before {
+  content: "⏱️";
+}
+
+.business:before {
+  content: "👥";
+}
+
+.feedback:before {
+  content: "💬";
+}
+
+.settings:before {
+  content: "⚙️";
+}
+
+.menu-item .title {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.menu-item .arrow {
+  color: #cccccc;
+  font-size: 30rpx;
+} 
